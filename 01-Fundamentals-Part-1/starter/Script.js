@@ -127,3 +127,129 @@ console.log(String(23), 23);
 //type coercion
 
 console.log("I am " + 25 + " Years Old");
+
+console.log(
+  `-----------------------Truthy/Falsey values---------------------------------`
+);
+
+console.log(Boolean(0));
+console.log(Boolean(undefined));
+console.log(Boolean(null));
+console.log(Boolean(""));
+
+const money = 100;
+
+if (money) {
+  //always be converted to boolean
+  console.log("Dont spend all at one place");
+} else {
+  console.log("You should get a job");
+}
+
+let height_1 = 100;
+
+if (height_1) {
+  console.log("height is defined");
+} else {
+  console.log("Height is not defined");
+}
+
+console.log(
+  `-----------------------equality == vs === ---------------------------------`
+);
+
+const age1 = "18";
+
+if (age1 === 18) console.log("You're an adult (Strict)");
+
+if (age1 == 18) console.log("You're an adult (loose)");
+
+// const favoruite = Number(prompt("Enter your favourite number"));
+
+// console.log(favoruite);
+
+// console.log(typeof favoruite);
+
+// if (favoruite === 23) {
+//   console.log("23 is amazing number");
+// } else if (favoruite === 7) {
+//   console.log("7 is also an cool number");
+// } else if (favoruite === 9) {
+//   console.log("9 is also an cool number");
+// } else {
+//   console.log("You entered an number");
+// }
+
+// //difference operator
+
+// if (favoruite !== 23) {
+//   console.log("Why not 23 ???");
+// }
+
+console.log(
+  `----------------------- Boolean Logic ---------------------------------`
+);
+
+const hasDrivingLicense = true;
+const hasGoodVision = true;
+const isTried = true;
+
+// console.log(hasDrivingLicense && hasGoodVision);
+
+// console.log(hasDrivingLicense || hasGoodVision);
+
+// console.log(!hasGoodVision);
+
+const shouldDrive = hasDrivingLicense && hasGoodVision && isTried;
+
+if (shouldDrive) {
+  console.log("Sarah can drive");
+} else {
+  console.log("Sarah shouldn't drive");
+}
+
+console.log(
+  `----------------------- Switch statement ---------------------------------`
+);
+
+const day = "Wedneday";
+
+switch (day) {
+  case "Monday":
+    console.log("Monday is boring");
+    console.log("Need to work");
+    break;
+  case "Tuesday":
+    console.log("TuesDay is also boring");
+    break;
+  case "Wednesday":
+  case "Thursday":
+    console.log("Need to Work");
+    break;
+  case "Friday":
+    console.log("Friday is Funday");
+    break;
+  case "Saturday":
+  case "Sunday":
+    console.log("Holiday");
+    break;
+  default:
+    console.log("Not a valid day");
+}
+
+console.log(
+  `----------------------- Statements and Expression ---------------------------------`
+);
+//refer the lecture
+
+console.log(
+  `--------------------------Conditonal or tenary operator------------------------------------`
+);
+
+const age_1 = 15;
+
+age_1 >= 18
+  ? console.log("I want to drink wine")
+  : console.log("I want to drink water");
+
+console.log(`I would like to drink ${age >= 18 ? "wine" : "water"}`);
