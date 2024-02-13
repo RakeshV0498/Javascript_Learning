@@ -1,25 +1,25 @@
 const books = [
   {
-    title: "Algorithms",
-    author: ["Robert Sedgewick", "Kevin Wayne"],
-    publisher: "Addison-Wesley Professional",
-    publicationDate: "2011-03-24",
+    title: 'Algorithms',
+    author: ['Robert Sedgewick', 'Kevin Wayne'],
+    publisher: 'Addison-Wesley Professional',
+    publicationDate: '2011-03-24',
     edition: 4,
     keywords: [
-      "computer science",
-      "programming",
-      "algorithms",
-      "data structures",
-      "java",
-      "math",
-      "software",
-      "engineering",
+      'computer science',
+      'programming',
+      'algorithms',
+      'data structures',
+      'java',
+      'math',
+      'software',
+      'engineering',
     ],
     pages: 976,
-    format: "hardcover",
-    ISBN: "9780321573513",
-    language: "English",
-    programmingLanguage: "Java",
+    format: 'hardcover',
+    ISBN: '9780321573513',
+    language: 'English',
+    programmingLanguage: 'Java',
     onlineContent: true,
     thirdParty: {
       goodreads: {
@@ -33,27 +33,27 @@ const books = [
     highlighted: true,
   },
   {
-    title: "Structure and Interpretation of Computer Programs",
+    title: 'Structure and Interpretation of Computer Programs',
     author: [
-      "Harold Abelson",
-      "Gerald Jay Sussman",
-      "Julie Sussman (Contributor)",
+      'Harold Abelson',
+      'Gerald Jay Sussman',
+      'Julie Sussman (Contributor)',
     ],
-    publisher: "The MIT Press",
-    publicationDate: "2022-04-12",
+    publisher: 'The MIT Press',
+    publicationDate: '2022-04-12',
     edition: 2,
     keywords: [
-      "computer science",
-      "programming",
-      "javascript",
-      "software",
-      "engineering",
+      'computer science',
+      'programming',
+      'javascript',
+      'software',
+      'engineering',
     ],
     pages: 640,
-    format: "paperback",
-    ISBN: "9780262543231",
-    language: "English",
-    programmingLanguage: "JavaScript",
+    format: 'paperback',
+    ISBN: '9780262543231',
+    language: 'English',
+    programmingLanguage: 'JavaScript',
     onlineContent: false,
     thirdParty: {
       goodreads: {
@@ -68,23 +68,23 @@ const books = [
   },
   {
     title: "Computer Systems: A Programmer's Perspective",
-    author: ["Randal E. Bryant", "David Richard O'Hallaron"],
-    publisher: "Prentice Hall",
-    publicationDate: "2002-01-01",
+    author: ['Randal E. Bryant', "David Richard O'Hallaron"],
+    publisher: 'Prentice Hall',
+    publicationDate: '2002-01-01',
     edition: 1,
     keywords: [
-      "computer science",
-      "computer systems",
-      "programming",
-      "software",
-      "C",
-      "engineering",
+      'computer science',
+      'computer systems',
+      'programming',
+      'software',
+      'C',
+      'engineering',
     ],
     pages: 978,
-    format: "hardcover",
-    ISBN: "9780130340740",
-    language: "English",
-    programmingLanguage: "C",
+    format: 'hardcover',
+    ISBN: '9780130340740',
+    language: 'English',
+    programmingLanguage: 'C',
     onlineContent: false,
     thirdParty: {
       goodreads: {
@@ -98,25 +98,25 @@ const books = [
     highlighted: true,
   },
   {
-    title: "Operating System Concepts",
-    author: ["Abraham Silberschatz", "Peter B. Galvin", "Greg Gagne"],
-    publisher: "John Wiley & Sons",
-    publicationDate: "2004-12-14",
+    title: 'Operating System Concepts',
+    author: ['Abraham Silberschatz', 'Peter B. Galvin', 'Greg Gagne'],
+    publisher: 'John Wiley & Sons',
+    publicationDate: '2004-12-14',
     edition: 10,
     keywords: [
-      "computer science",
-      "operating systems",
-      "programming",
-      "software",
-      "C",
-      "Java",
-      "engineering",
+      'computer science',
+      'operating systems',
+      'programming',
+      'software',
+      'C',
+      'Java',
+      'engineering',
     ],
     pages: 921,
-    format: "hardcover",
-    ISBN: "9780471694663",
-    language: "English",
-    programmingLanguage: "C, Java",
+    format: 'hardcover',
+    ISBN: '9780471694663',
+    language: 'English',
+    programmingLanguage: 'C, Java',
     onlineContent: false,
     thirdParty: {
       goodreads: {
@@ -129,16 +129,16 @@ const books = [
     },
   },
   {
-    title: "Engineering Mathematics",
-    author: ["K.A. Stroud", "Dexter J. Booth"],
-    publisher: "Palgrave",
-    publicationDate: "2007-01-01",
+    title: 'Engineering Mathematics',
+    author: ['K.A. Stroud', 'Dexter J. Booth'],
+    publisher: 'Palgrave',
+    publicationDate: '2007-01-01',
     edition: 14,
-    keywords: ["mathematics", "engineering"],
+    keywords: ['mathematics', 'engineering'],
     pages: 1288,
-    format: "paperback",
-    ISBN: "9781403942463",
-    language: "English",
+    format: 'paperback',
+    ISBN: '9781403942463',
+    language: 'English',
     programmingLanguage: null,
     onlineContent: true,
     thirdParty: {
@@ -153,15 +153,15 @@ const books = [
     highlighted: true,
   },
   {
-    title: "The Personal MBA: Master the Art of Business",
-    author: "Josh Kaufman",
-    publisher: "Portfolio",
-    publicationDate: "2010-12-30",
-    keywords: ["business"],
+    title: 'The Personal MBA: Master the Art of Business',
+    author: 'Josh Kaufman',
+    publisher: 'Portfolio',
+    publicationDate: '2010-12-30',
+    keywords: ['business'],
     pages: 416,
-    format: "hardcover",
-    ISBN: "9781591843528",
-    language: "English",
+    format: 'hardcover',
+    ISBN: '9781591843528',
+    language: 'English',
     thirdParty: {
       goodreads: {
         rating: 4.11,
@@ -173,22 +173,22 @@ const books = [
     },
   },
   {
-    title: "Crafting Interpreters",
-    author: "Robert Nystrom",
-    publisher: "Genever Benning",
-    publicationDate: "2021-07-28",
+    title: 'Crafting Interpreters',
+    author: 'Robert Nystrom',
+    publisher: 'Genever Benning',
+    publicationDate: '2021-07-28',
     keywords: [
-      "computer science",
-      "compilers",
-      "engineering",
-      "interpreters",
-      "software",
-      "engineering",
+      'computer science',
+      'compilers',
+      'engineering',
+      'interpreters',
+      'software',
+      'engineering',
     ],
     pages: 865,
-    format: "paperback",
-    ISBN: "9780990582939",
-    language: "English",
+    format: 'paperback',
+    ISBN: '9780990582939',
+    language: 'English',
     thirdParty: {
       goodreads: {
         rating: 4.7,
@@ -200,16 +200,16 @@ const books = [
     },
   },
   {
-    title: "Deep Work: Rules for Focused Success in a Distracted World",
-    author: "Cal Newport",
-    publisher: "Grand Central Publishing",
-    publicationDate: "2016-01-05",
+    title: 'Deep Work: Rules for Focused Success in a Distracted World',
+    author: 'Cal Newport',
+    publisher: 'Grand Central Publishing',
+    publicationDate: '2016-01-05',
     edition: 1,
-    keywords: ["work", "focus", "personal development", "business"],
+    keywords: ['work', 'focus', 'personal development', 'business'],
     pages: 296,
-    format: "hardcover",
-    ISBN: "9781455586691",
-    language: "English",
+    format: 'hardcover',
+    ISBN: '9781455586691',
+    language: 'English',
     thirdParty: {
       goodreads: {
         rating: 4.19,
@@ -222,3 +222,131 @@ const books = [
     highlighted: true,
   },
 ];
+
+// Task 1
+console.log(`------------------Task 1 --------------`);
+const [firstBook, secondBook] = books;
+
+console.log(firstBook, secondBook);
+
+// task 2
+console.log(`------------------Task 2 --------------`);
+
+const [, , thirdBook] = books;
+
+console.log(thirdBook);
+
+console.log(`------------------Task 3 --------------`);
+
+const ratings = [
+  ['rating', 4.19],
+  ['ratingsCount', 144584],
+];
+
+const [[, rating], [, ratingsCount]] = ratings;
+
+console.log(rating, ratingsCount);
+
+console.log(`------------------Task 4 --------------`);
+
+const ratingStars = [63405, 1808];
+
+const [fiveRatings, oneRatings, threeRatings = 0] = ratingStars;
+
+console.log(fiveRatings, oneRatings, threeRatings);
+
+console.log(`------------------Task 5 --------------`);
+
+const { title, author, ISBN } = books[0];
+
+console.log(title, author, ISBN);
+
+console.log(`------------------Task 6 --------------`);
+
+const { keywords: tags } = books[0];
+
+console.log(tags);
+
+console.log(`------------------Task 7 --------------`);
+
+const { language, programmingLanguage = 'unknown' } = books[6];
+
+console.log(language, programmingLanguage);
+
+console.log(`------------------Task 8 --------------`);
+
+let bookTitle = 'unknown';
+let bookAuthor = 'unknown';
+
+({ title: bookTitle, author: bookAuthor } = books[0]);
+
+console.log(bookTitle, bookAuthor);
+
+console.log(`------------------Task 9 --------------`);
+
+const {
+  thirdParty: {
+    goodreads: { rating: bookRating },
+  },
+} = books[0];
+
+console.log(bookRating);
+
+console.log(`------------------Task 10 --------------`);
+
+const printBookInfo = ({ title, author, year = 'Unknown' }) => {
+  console.log(`${title} by ${author},  ${year}`);
+};
+
+printBookInfo({
+  title: books[0].title,
+  author: books[0].author,
+  year: books[0].year,
+});
+
+console.log(`------------------Task 11 --------------`);
+
+const bookAuthors = [...books[0].author, ...books[1].author];
+
+console.log(bookAuthors);
+
+function spellWord(str) {
+  console.log(...str);
+}
+
+spellWord('hello');
+
+console.log(`------------------Task 12 --------------`);
+
+const [mainKeyword, ...rest] = books[0].keywords;
+
+console.log(mainKeyword, rest);
+
+console.log(`------------------Task 13 --------------`);
+
+const { publisher: bookPublisher, ...restOfTheBook } = books[1];
+
+console.log(bookPublisher, restOfTheBook);
+
+console.log(`------------------Task 14 --------------`);
+
+function printBookAuthorsCount(title, ...authors) {
+  console.log(`The book "${title}" has ${authors.length} authors`);
+}
+
+printBookAuthorsCount('Algorithms', 'Rakesh', 'Jonas');
+
+console.log(`------------------Task 15 --------------`);
+
+function hasExamplesInJava(book) {
+  return book.programmingLanguage === 'Java' || 'no data available';
+}
+
+console.log(hasExamplesInJava(books[1]));
+
+console.log(`------------------Task 16 --------------`);
+
+books.map(book => {
+  book.onlineContent &&
+    console.log(book.onlineContent && `${book.title} has online content`);
+});
