@@ -1,3 +1,5 @@
+'use strict';
+
 const books = [
   {
     title: 'Algorithms',
@@ -350,3 +352,267 @@ books.map(book => {
   book.onlineContent &&
     console.log(book.onlineContent && `${book.title} has online content`);
 });
+
+console.log(`------------------Task 17 --------------`);
+
+books.forEach(book => {
+  book.onlineContent ??
+    console.log(`${book.title} provides no data about its online content`);
+});
+
+console.log(`------------------Task 18 --------------`);
+
+books.forEach(book => {
+  book.edition ||= 1;
+});
+
+console.log(`------------------Task 19 --------------`);
+
+books.forEach(book => {
+  book.highlighted &&= !(book.thirdParty.goodreads.rating < 4.2);
+});
+
+console.log(`------------------Task 20 --------------`);
+
+let pageSum = 0;
+
+for (const book of books) {
+  pageSum += book.pages;
+}
+
+console.log(pageSum);
+
+console.log(`------------------Task 21 --------------`);
+
+let allAuthors = [];
+
+for (const book of books) {
+  if (typeof book.author === 'object') {
+    allAuthors.push(...book.author);
+  } else {
+    allAuthors.push(book.author);
+  }
+}
+
+console.log(allAuthors);
+
+console.log(`------------------Task 21 --------------`);
+
+for (const [num, author] of allAuthors.entries()) {
+  console.log(`${num + 1}. ${author}`);
+}
+
+console.log(`------------------Task 22 --------------`);
+
+const bookData = [
+  ['title', 'Computer Networking: A Top-Down Approach'],
+  ['author', ['James F. Kurose', 'Keith W. Ross']],
+  ['publisher', 'Addison Wesley'],
+];
+
+const newBook = {
+  [bookData[0][0]]: bookData[0][1],
+  [bookData[1][0]]: bookData[1][1],
+  [bookData[2][0]]: bookData[2][1],
+};
+
+console.log(newBook);
+
+console.log(`------------------Task 23 --------------`);
+
+const pages = 880;
+
+const newBook2 = {
+  title: 'The C Programming Language',
+  author: ['Brian W. Kernighan', 'Dennis M. Ritchie'],
+  pages,
+};
+
+console.log(newBook2);
+
+console.log(`------------------Task 24 --------------`);
+
+function getFirstKeyword(book) {
+  console.log(book.keywords?.[0]);
+}
+
+getFirstKeyword(books[0]);
+getFirstKeyword(newBook2);
+
+console.log(`------------------Coding Challenge# 1 --------------`);
+
+const game = {
+  team1: 'Bayern Munich',
+  team2: 'Borrussia Dortmund',
+  players: [
+    [
+      'Neuer',
+      'Pavard',
+      'Martinez',
+      'Alaba',
+      'Davies',
+      'Kimmich',
+      'Goretzka',
+      'Coman',
+      'Muller',
+      'Gnarby',
+      'Lewandowski',
+    ],
+    [
+      'Burki',
+      'Schulz',
+      'Hummels',
+      'Akanji',
+      'Hakimi',
+      'Weigl',
+      'Witsel',
+      'Hazard',
+      'Brandt',
+      'Sancho',
+      'Gotze',
+    ],
+  ],
+  score: '4:0',
+  scored: ['Lewandowski', 'Gnarby', 'Lewandowski', 'Hummels'],
+  date: 'Nov 9th, 2037',
+  odds: {
+    team1: 1.33,
+    x: 3.25,
+    team2: 6.5,
+  },
+};
+
+const gameEvents = new Map([
+  [17, '⚽ GOAL'],
+  [36, '🔁 Substitution'],
+  [47, '⚽ GOAL'],
+  [61, '🔁 Substitution'],
+  [64, '🔶 Yellow card'],
+  [69, '🔴 Red card'],
+  [70, '🔁 Substitution'],
+  [72, '🔁 Substitution'],
+  [76, '⚽ GOAL'],
+  [80, '⚽ GOAL'],
+  [92, '🔶 Yellow card'],
+]);
+
+console.log(`---------------Task 1-------------------`);
+
+// const players1 = game.players[0];
+// const players2 = game.players[1];
+
+const [players1, players2] = game.players;
+
+console.log(players1, players2);
+
+console.log(`---------------Task 2-------------------`);
+
+const [gk, ...fieldPlayers] = players1;
+const [gk1, ...fieldPlayers1] = players2;
+
+console.log(gk, fieldPlayers);
+console.log(gk1, fieldPlayers1);
+
+console.log(`---------------Task 3-------------------`);
+
+const allPlayers = [...players1, ...players2];
+
+console.log(allPlayers);
+
+console.log(`---------------Task 4-------------------`);
+
+const players1Final = [...players1, 'Thiago', 'Coutinho', 'Perisic'];
+
+console.log(players1Final);
+
+console.log(`---------------Task 5-------------------`);
+
+const {
+  odds: { team1, x: draw, team2 },
+} = game;
+
+console.log(team1, draw, team2);
+
+console.log(`---------------Task 6-------------------`);
+
+const printGoals = function (...players) {
+  console.log(players);
+  console.log(`${players.length} goals were scored `);
+};
+
+printGoals('Davies', 'Muller', 'Lewandowski', 'Kimmich');
+printGoals('Davies', 'Muller');
+printGoals(...game.scored);
+
+console.log(`---------------Task 7-------------------`);
+
+team1 < team2 && console.log(`Team 1 is likely to win`);
+team2 < team1 && console.log(`Team 2 is likely to win`);
+
+console.log(`------------------Coding Challenge# 2 --------------`);
+
+console.log(`---------------Task 1-------------------`);
+
+for (const [goalNo, playerName] of game.scored.entries()) {
+  console.log(`Goal ${goalNo + 1}: ${playerName}`);
+}
+console.log(`---------------Task 2-------------------`);
+
+let sum = 0;
+let count = Object.values(game.odds).length;
+for (const odd of Object.values(game.odds)) {
+  sum += odd;
+}
+
+const average = sum / count;
+
+console.log(average);
+
+console.log(`---------------Task 3-------------------`);
+
+const properties = Object.entries(game.odds);
+
+console.log(properties);
+
+for (const [key, value] of properties) {
+  let message = '';
+
+  // if (key === 'team1') {
+  //   message = `Odd of victory ${game.team1}`;
+  // } else if (key === 'team2') {
+  //   message = `Odd of victory ${game.team2}`;
+  // } else if (key === 'x') {
+  //   message = `Odd of draw`;
+  // }
+  const teamstr = key === 'x' ? 'Draw' : `victory ${game[key]}`;
+  console.log(`Odd of ${teamstr}: ${value}`);
+}
+
+console.log(`------------------Coding Challenge# 3 --------------`);
+
+console.log(`---------------Task 1-------------------`);
+
+const events = [...new Set(gameEvents.values())];
+
+console.log(events);
+
+console.log(`---------------Task 2-------------------`);
+
+gameEvents.delete(64);
+
+console.log(gameEvents);
+
+console.log(`---------------Task 3-------------------`);
+
+const time = [...gameEvents.keys()].pop();
+
+console.log(
+  `An event happened, on average, every ${time / gameEvents.size} minutes`
+);
+
+console.log(`---------------Task 4-------------------`);
+
+for (const [min, event] of gameEvents) {
+  const half = min <= 45 ? 'First' : 'Second';
+  console.log(`[${half} Half] ${min}:${event}`);
+}
