@@ -155,7 +155,7 @@ const restaurant = {
 
 // console.log(rest.get(arr));
 
-const question = new Map([
+/* const question = new Map([
   ['question', 'What is the best programming language in the world?'],
   [1, 'C'],
   [2, 'Java'],
@@ -200,6 +200,216 @@ console.log(...question);
 console.log(question.entries());
 console.log([...question.keys()]);
 console.log([...question.values()]);
+
+*/
+
+// Working with strings //
+
+console.log(`=======================Strings - 1  ===========================`);
+
+const airline = 'Air India Airlines';
+const plane = 'A320';
+
+console.log(plane[0]);
+console.log(plane[1]);
+console.log(plane[2]);
+
+console.log('B737'[0]);
+console.log('B737'.length);
+
+console.log(airline.length);
+
+// String Methods
+
+console.log(airline.indexOf('i'));
+console.log(airline.lastIndexOf('i'));
+
+console.log(airline.indexOf('s'));
+
+// Slice start number from the number we specified and ends at the number that we specified with one lesss, that means end index number wont be included
+
+console.log(airline.slice(4));
+
+console.log(airline.slice(4, 9));
+
+console.log(airline.slice(0, airline.indexOf(' ')));
+
+console.log(airline.slice(airline.lastIndexOf(' ') + 1));
+
+// Slices from right to left
+
+console.log(airline.slice(-3));
+
+// slices from both left and right
+
+console.log(airline.slice(1, -2));
+
+console.log(airline.slice(-2, 0));
+
+const checkMiddleSeat = function (seat) {
+  const seatNo = seat.slice(-1).toUpperCase();
+  console.log(
+    `Your Seat ${seatNo} is ${
+      seatNo === 'B' || seatNo === 'E'
+        ? 'in Middle'
+        : 'not in Middle,You got lucky 😀'
+    }`
+  );
+};
+
+checkMiddleSeat('11b');
+checkMiddleSeat('23D');
+checkMiddleSeat('3c');
+checkMiddleSeat('4e');
+
+console.log(new String('Rakesh'));
+
+console.log(typeof new String('Rakesh'));
+
+console.log(typeof new String('Rakesh').slice(-1));
+
+console.log(
+  `================================Strings - 2 ========================`
+);
+
+console.log(airline.toLowerCase());
+console.log(airline.toUpperCase());
+
+// Fix Capitalization in Passenger Name
+
+const passengerName = 'rAkESh';
+
+function nameProperCase(name) {
+  console.log(name.charAt(0).toUpperCase() + name.slice(1).toLowerCase());
+}
+
+nameProperCase('kjhu');
+
+// Comparing Emails
+
+const email = 'hello@jonas.io';
+const loginEmail = '  Hello@Jonas.Io \n';
+
+// const lowerEmail = loginEmail.toLowerCase();
+// const trimmedEmail = lowerEmail.trim();
+
+const normalizedEmail = loginEmail.toLowerCase().trim();
+
+console.log(normalizedEmail);
+
+function compareEmail(email1, email2) {
+  console.log(email1 === email2 ? true : false);
+}
+
+compareEmail(email, loginEmail);
+compareEmail(email, normalizedEmail);
+
+//Replace Strings
+
+const priceGB = '288.97\u00A3';
+console.log(priceGB);
+
+const priceUS = priceGB.replace('\u00A3', '$');
+console.log(priceUS);
+
+const announcement =
+  'All Passengers come to boaring door 23. Boarding door 23!';
+
+console.log(announcement.replace('door', 'gate'));
+
+// We are using regular expression to replace all the occurence.
+console.log(announcement.replace(/door/g, 'gate'));
+
+// String Methods returns Boolean
+
+const plane2 = 'Airbus A320neo';
+
+console.log(plane2.includes('A320'));
+console.log(plane2.includes('Boeing'));
+
+console.log(plane2.startsWith('B'));
+console.log(plane2.startsWith('Ai'));
+
+if (plane2.startsWith('Airbus') && plane2.endsWith('neo')) {
+  console.log('Part of the new Airbus family');
+}
+
+// Practice
+
+const checkBaggage = function (items) {
+  items = items.toLowerCase();
+  if (items.includes('knife') || items.includes('gun')) {
+    console.log('Your Not allowed');
+  } else {
+    console.log('You are Allowed, Have a safe trip');
+  }
+};
+
+checkBaggage('I have a laptop,some food and a pocket knife');
+
+checkBaggage('Socks and Camera');
+
+checkBaggage('Snacks and a Gun for protection');
+
+console.log(
+  `================================Strings - 3 ========================`
+);
+
+console.log('a+very+nice+string');
+console.log('a+very+nice+string'.split('+'));
+
+console.log('Rakesh Vengatesan'.split(' '));
+
+const [firstName, lastName] = 'Rakesh Vengatesan'.split(' ');
+
+console.log(`First Name: ${firstName} 
+Last Name: ${lastName}`);
+
+const newName = ['Mr.', firstName, lastName.toUpperCase()].join(' ');
+
+console.log(newName);
+
+const capitalizeName = function (name) {
+  const names = name.split(' ');
+  const nameArr = [];
+  names.forEach(value => {
+    // nameArr.push(value.split('')[0].toUpperCase() + value.slice(1));
+    nameArr.push(value.replace(value[0], value[0].toUpperCase()));
+    console.log(nameArr.join(' '));
+  });
+};
+
+capitalizeName('rakesh vengatesan');
+
+// Padding a string
+
+const message = 'Go to Gate 23';
+console.log(message.padStart(30, '#').padEnd(40, '#'));
+console.log('Rakesh'.padStart(30, '#').padEnd(40, '#'));
+
+// Real world example for padding
+
+const maskCreditCard = function (number) {
+  const str = number + '';
+  const lastDigits = str.slice(-4);
+  return lastDigits.padStart(str.length, '*');
+};
+
+console.log(maskCreditCard(142145442123));
+console.log(maskCreditCard(45124512));
+
+// Repeat
+
+const message2 = 'Bad Weather..., All depatures delayed... ';
+
+console.log(message2.repeat(5));
+
+const planeInLine = function (n) {
+  console.log(`There are ${n} planes in line ${'✈️'.repeat(n)}`);
+};
+
+planeInLine(3);
+planeInLine(5);
 
 // Without Optional Chaining
 // if (restaurant.openingHours && restaurant.openingHours.mon)

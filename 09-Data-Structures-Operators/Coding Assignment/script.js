@@ -616,3 +616,61 @@ for (const [min, event] of gameEvents) {
   const half = min <= 45 ? 'First' : 'Second';
   console.log(`[${half} Half] ${min}:${event}`);
 }
+
+console.log(`------------------Coding Challenge# 4 --------------`);
+
+function createVariableName(name) {
+  const [str1, str2] = name.toLowerCase().trim().split('_');
+  const updatedStr2 = str2.replace(str2[0], str2[0].toUpperCase());
+  return str1 + updatedStr2;
+}
+
+function handleButtonClick() {
+  const text = document.querySelector('#txt-area').value;
+  const txtArr = text.split('\n');
+  const icon = '✅';
+  txtArr.forEach((value, index) => {
+    index += 1;
+    console.log(createVariableName(value).padEnd(20, ' '), icon.repeat(index));
+  });
+}
+
+const txtArea = document.createElement('textarea');
+txtArea.setAttribute('id', 'txt-area');
+document.body.append(txtArea);
+
+const btn = document.createElement('button');
+btn.setAttribute('id', 'btn');
+btn.textContent = 'Submit';
+document.body.append(btn);
+
+btn.addEventListener('click', handleButtonClick);
+
+const flights =
+  '_Delayed_Departure;fao93766109;txl2133758440;11:25+_Arrival;bru0943384722;fao93766109;11:45+_Delayed_Arrival;hel7439299980;fao93766109;12:05+_Departure;fao93766109;lis2323639855;12:30';
+
+const rows = flights.split('+');
+
+rows.forEach(value => {
+  const [entry, src, des, time] = value.split(';');
+
+  const formattedEntry = entry.split('_').join(' ').trim();
+  // const formattedEntry = entry.replaceAll('_', ' ').trim();
+
+  const formattedSrc = src.slice(0, 3).toUpperCase();
+
+  const formattedDes = des.slice(0, 3).toUpperCase();
+
+  const formattedTime = `(${time.replace(':', 'H')})`;
+
+  console.log(
+    `${
+      formattedEntry.startsWith('Delayed')
+        ? '🔴 ' + formattedEntry
+        : formattedEntry
+    } from ${formattedSrc} to ${formattedDes} ${formattedTime}`.padStart(
+      45,
+      ' '
+    )
+  );
+});
