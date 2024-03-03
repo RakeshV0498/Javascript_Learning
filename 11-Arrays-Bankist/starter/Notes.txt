@@ -1,0 +1,23 @@
+
+- **forEach**:
+  - Use when you want to iterate over an array and perform some action on each element without needing to store the changes.
+  - It doesn't return a new array; instead, it modifies the original array in place.
+  - Example:
+    ```javascript
+    movements.forEach(value => {
+      console.log(value * 1.1); // Display the transformed value
+    });
+    ```
+
+- **map**:
+  - Use when you want to iterate over an array, apply transformations to each element, and store the changes in a new array.
+  - It returns a new array with the transformed values, leaving the original array unchanged.
+  - Example:
+    ```javascript
+    const transformedMovements = movements.map(value => {
+      return value * 1.1; // Store the transformed value in a new array
+    });
+    console.log(transformedMovements); // Display the new array with transformed values
+    ```
+
+Choose between `forEach` and `map` based on whether you need to store the transformed values in a new array or if you simply want to perform actions on each element of the array.
