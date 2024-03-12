@@ -59,3 +59,74 @@ console.log(`------------------Test Data 1-----------------`);
 console.log(calcAverageHumanAge([5, 2, 4, 1, 15, 8, 3]));
 console.log(`------------------Test Data 2-----------------`);
 console.log(calcAverageHumanAge([16, 6, 10, 5, 6, 1, 4]));
+
+const dogs = [
+  { weight: 22, curFood: 250, owners: ["Alice", "Bob"] },
+  { weight: 8, curFood: 200, owners: ["Matilda"] },
+  { weight: 13, curFood: 275, owners: ["Sarah", "John"] },
+  { weight: 32, curFood: 340, owners: ["Michael"] },
+];
+
+console.log(`-------------------------Coding Challenge #4----------------`);
+
+console.log(`====================Task 1=================`);
+
+dogs.forEach((dog) => (dog.recFood = Math.trunc(dog.weight ** 0.75 * 28)));
+
+console.log(`====================Task 2=================`);
+
+const sarahsDog = dogs.find((dog) => dog.owners.includes("Sarah"));
+
+console.log(
+  `${
+    sarahsDog.curFood > sarahsDog.recFood
+      ? "Sarah's Dog eat much"
+      : "Sarah's Dog eat less"
+  } `
+);
+
+console.log(`====================Task 3=================`);
+
+const ownersEatTooMuch = dogs
+  .filter((dog) => dog.curFood > dog.recFood)
+  .flatMap((dog) => dog.owners);
+
+console.log(ownersEatTooMuch);
+
+const ownersEatTooLittle = dogs
+  .filter((dog) => dog.curFood < dog.recFood)
+  .flatMap((dog) => dog.owners);
+
+console.log(ownersEatTooLittle);
+
+console.log(`====================Task 4=================`);
+
+console.log(ownersEatTooMuch.join(" and ").concat("'s dogs eat too much!"));
+console.log(ownersEatTooLittle.join(" and ").concat("'s dogs eat too little!"));
+
+console.log(`====================Task 5=================`);
+
+console.log(dogs.some((dog) => dog.curFood === dog.recFood));
+
+console.log(`====================Task 6=================`);
+
+console.log(
+  dogs.some(
+    (dog) => dog.curFood > dog.recFood * 0.9 && dog.curFood < dog.recFood * 1.1
+  )
+);
+
+console.log(`====================Task 7=================`);
+
+const okayDogs = (dog) => {
+  return dog.curFood > dog.recFood * 0.9 && dog.curFood < dog.recFood * 1.1;
+};
+
+console.log(dogs.filter(okayDogs));
+
+console.log(`====================Task 8=================`);
+
+const dogsCopy = dogs.slice().sort((a, b) => a.recFood - b.recFood);
+
+console.log(dogs);
+console.log(dogsCopy);

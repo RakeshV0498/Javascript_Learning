@@ -565,28 +565,85 @@ const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 
 // Creating and filling arrays
 
-console.log([1, 2, 3, 4, 5, 6, 7, 8, 9]);
-console.log(new Array(1, 2, 3, 4, 5, 6, 7, 8, 9));
+// console.log([1, 2, 3, 4, 5, 6, 7, 8, 9]);
+// console.log(new Array(1, 2, 3, 4, 5, 6, 7, 8, 9));
 
-const x = new Array(7);
+// const x = new Array(7);
 
-console.log(x);
+// console.log(x);
 
-x.fill(1, 0, 2);
-console.log(x);
-x.fill(2, 2);
-console.log(x);
+// x.fill(1, 0, 2);
+// console.log(x);
+// x.fill(2, 2);
+// console.log(x);
 
-const y = Array.from({ length: 7 }, () => 1);
-console.log(y);
+// const y = Array.from({ length: 7 }, () => 1);
+// console.log(y);
 
-const z = Array.from({ length: 10 }, () => Math.ceil(Math.random() * 10));
-console.log(z);
+// const z = Array.from({ length: 10 }, () => Math.ceil(Math.random() * 10));
+// console.log(z);
 
-labelBalance.addEventListener('click', function () {
-  const movementsUI = Array.from(
-    document.querySelectorAll('.movements__value'),
-    el => Number(el.textContent.replace('€', ''))
+// labelBalance.addEventListener('click', function () {
+//   const movementsUI = Array.from(
+//     document.querySelectorAll('.movements__value'),
+//     el => Number(el.textContent.replace('€', ''))
+//   );
+//   console.log(movementsUI);
+// });
+
+// Excercise 1
+
+const allDeposits = accounts
+  .map(acc => acc.movements)
+  .flat(Infinity)
+  .filter(value => value > 0)
+  .reduce((sum, cur) => sum + cur, 0);
+
+console.log(`Total Deposits in the bank $ ${allDeposits}`);
+
+// Excercise 2
+
+// const bigDeposits = accounts
+//   .flatMap(acc => acc.movements)
+//   .filter(value => value >= 1000).length;
+
+const bigDeposits = accounts
+  .flatMap(acc => acc.movements)
+  .reduce((count, cur) => (cur >= 1000 ? ++count : count), 0);
+
+console.log(bigDeposits);
+
+// Excercise 3
+const { deposits, withdrawals } = accounts
+  .flatMap(acc => acc.movements)
+  .reduce(
+    (sums, curr) => {
+      // curr > 0 ? (sums.deposits += curr) : (sums.withdrawals -= curr);
+      sums[curr > 0 ? 'deposits' : 'withdrawals'] += curr;
+      return sums;
+    },
+    { deposits: 0, withdrawals: 0 }
   );
-  console.log(movementsUI);
-});
+
+console.log(deposits);
+console.log(-withdrawals);
+
+// Excercise 4
+
+const converTitle = function (title) {
+  const expections = ['a', 'an', 'the', 'but', 'or', 'on', 'in', 'with'];
+
+  const titleCase = title
+    .toLowerCase()
+    .split(' ')
+    .map(word =>
+      expections.includes(word) ? word : word[0].toUpperCase() + word.slice(1)
+    )
+    .join(' ');
+
+  return titleCase;
+};
+
+console.log(converTitle('this is a nice title'));
+console.log(converTitle('this is a LONG title, but not too long'));
+console.log(converTitle('and here is another title with an EXAMPLE'));
